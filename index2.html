@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal portfolio of Afvan Dyevariscky Akhbar, a student of SMKN 1 Kepanjen majoring in Software Engineering">
+    <title>Afvan Dyevariscky Akhbar - My Portofolio Website</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Hubungkan ke file CSS terpisah -->
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+    <!-- ========== NAVBAR ==========-->
+    <header class="header">
+        <nav class="navbar">
+
+            <a href="#home" class="logo">
+                AFVAN<span>.</span>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link-active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#dream" class="nav-link">Dream</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#project" class="nav-link">Project</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+
+            <button class="theme-button" id="themeButton" type="button" aria-label="Toggle Theme">
+                🌗
+            </button>
+
+            <button class="menu-button" id="menuButton" type="button" aria-label="Toggle Menu">
+                ≡
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-container">
+
+                <div class="hero-content">
+                    <p class="hero-subtitle">HELLO, I'M</p>
+
+                    <h1 class="hero-title">
+                        AFVAN<br>
+                        DYEVARISCKY<br>
+                        AKHBAR<span>.</span>
+                    </h1>
+
+                    <h2 class="hero-role">Junior Web Developer</h2>
+
+                    <p class="hero-description">I am a student who is interested in web development, programming, and
+                        technology. I enjoy learning new things and creating digital projects.</p>
+
+                    <div class="hero-button">
+                        <a href="#project" class="btn btn-primary">Explore My Work</a>
+                        <a href="#about" class="btn btn-secondary">About Me</a>
+                    </div>
+
+                    <div class="hero-social">
+                        <a href="https://instagram.com/af_vannzzz" class="social-link" target="_blank">Instagram</a>
+                        <a href="https://github.com/AfvanDyevarisckyAkhbar" class="social-link" target="_blank">GitHub</a>
+                    </div>
+
+                </div>
+
+                <div class="hero-image-container">
+                    <!-- Layer dekorasi di belakang foto -->
+                    <span class="card-bg card-bg-1"></span>
+                    <span class="card-bg card-bg-2"></span>
+                    <span class="card-bg card-bg-3"></span>
+
+                    <div class="hero-image">
+                        <img src="AfvanDyevarisckyAkhbar.jpeg" alt="Photo of Afvan Dyevariscky Akhbar">
+                    </div>
+
+                    <div class="image-label">
+                        <span>01</span>
+                        <p>Student <br> Developer</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========= Introduction Section ===========-->
+        <section class="introduction" id="about">
+            <div class="section-container">
+                <div class="section-heading">
+                    <p class="section-number">01 / Introduction</p>
+                    <h2>A Little<br>About Me</h2>
+                </div>
+
+                <div class="introduction-content">
+                    <p class="large-text">
+                        I am a student of <strong>SMKN 1 Kepanjen</strong> majoring in <strong>Software Engineering</strong>
+                    </p>
+
+                    <p>
+                        I am currently studying the basics of web development and programming, practicing HTML, CSS, and JavaScript.
+                    </p>
+
+                    <a href="#skills" class="text-link">More About My Skills →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======= Dream Preview ======= -->
+        <section class="dream-preview" id="dream">
+            <div class="section-container">
+                <div class="dream-content">
+                    <p class="section-number">02 / My Future</p>
+                    <h2>My Dream Is To <span>Build.</span></h2>
+                    <p>
+                        I want to become a professional software engineer who can create useful, creative, and innovative digital products.
+                    </p>
+                </div>
+
+                <div class="dream-card">
+                    <span class="dream-number">01</span>
+                    <h3>Learn</h3>
+                    <p>Continue learning programming and modern technologies</p>
+                </div>
+
+                <div class="dream-card">
+                    <span class="dream-number">02</span>
+                    <h3>Create</h3>
+                    <p>Create useful and interesting digital projects</p>
+                </div>
+
+                <div class="dream-card">
+                    <span class="dream-number">03</span>
+                    <h3>Grow</h3>
+                    <p>Improve my skills and gain more experience</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =========== Project Preview =========== -->
+        <section class="project-preview" id="project">
+            <div class="section-container">
+                <div class="section-heading">
+                    <p class="section-number">03 / Selected Work</p>
+                    <h2>My<br>Projects</h2>
+                </div>
+
+                <div class="project-grid">
+
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="Tugas1.png" alt="Student Data Form Preview">
+                            <span class="project-number">01</span>
+                        </div>
+
+                        <div class="project-info">
+                            <p class="project-category">HTML / CSS</p>
+                            <h3>Junior Web Industry</h3>
+                            <p>My first website project Personal Website Page</p>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="Tugas2.png" alt="Digital Project Preview">
+                            <span class="project-number">02</span>
+                        </div>
+
+                        <div class="project-info">
+                            <p class="project-category">HTML / CSS</p>
+                            <h3>Responsive Digital Profile Card</h3>
+                            <p>A personal digital profile website with a simple modern design</p>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="Tugas3.png" alt="Personal Portfolio Preview">
+                            <span class="project-number">03</span>
+                        </div>
+
+                        <div class="project-info">
+                            <p class="project-category">HTML / CSS / JS</p>
+                            <h3>Interactive Digital Profile Card</h3>
+                            <p>A interactive website with simple and modern website project design</p>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Skills Preview -->
+        <section class="skills-preview" id="skills">
+            <div class="section-container">
+                <div class="skills-intro">
+                    <p class="section-number">04 / Skills</p>
+                    <h2>What<br>I Am Learning</h2>
+                </div>
+
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <span class="skill-number">01</span>
+                        <h3>HTML</h3>
+                        <p>Structure and semantic web development</p>
+                    </div>
+
+                    <div class="skill-item">
+                        <span class="skill-number">02</span>
+                        <h3>CSS</h3>
+                        <p>Styling, layout, animation, and responsive design</p>
+                    </div>
+
+                    <div class="skill-item">
+                        <span class="skill-number">03</span>
+                        <h3>JavaScript</h3>
+                        <p>Basic interactive and website functionality</p>
+                    </div>
+
+                    <div class="skill-item">
+                        <span class="skill-number">04</span>
+                        <h3>GitHub</h3>
+                        <p>Managing projects and learning repository workflows</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ========== Contact CTA ========== -->
+        <section class="contact-preview" id="contact">
+            <div class="contact-container">
+                <p class="section-number">05 / Get In Touch</p>
+
+                <h2>Let's<br>Connect<span>.</span></h2>
+
+                <p>
+                    Want to see more of my work or connect with me?
+                    Find me on social media or send a message.
+                </p>
+
+                <a href="#" class="btn btn-primary" id="btnKontak" class="btn-contact">Contact Me</a>
+
+            </div>
+
+        </section>
+    </main>
+
+    <!-- ========== Footer ========== -->
+    <footer class="footer">
+
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#home" class="logo">Afvan<span>.</span></a>
+                <p>Junior Web Developer<br>SMKN 1 Kepanjen</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Navigation</h3>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#dream">Dream</a>
+                <a href="#project">Project</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <div class="footer-social">
+                <h3>Social</h3>
+                <a href="https://instagram.com/af_vannzzz" target="_blank">Instagram</a>
+                <a href="https://github.com/AfvanDyevarisckyAkhbar" target="_blank">GitHub</a>
+            </div>
+
+            <div class="footer-school">
+                <h3>Education</h3>
+                <p>SMKN 1 Kepanjen</p>
+                <p>Rekayasa Perangkat Lunak</p>
+                <p>Class X RPL 1</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Afvan Dyevariscky Akhbar. All Rights Reserved.</p>
+            <p>Made with HTML, CSS & JavaScript.</p>
+        </div>
+    </footer>
+
+    <div id="modalKontak" class="modal-overlay">
+        <div class="modal-box">
+            <h2>Hubungi Saya Melalui</h2>
+            <h2 classs="contact">Kontak :</h2>
+            <a class="inf1" href="https://github.com/AfvanDyevarisckyAkhbar"><b>GitHub</b></a>
+            <p class="blank-text"> ------------------------------------------------------ </p>
+            <a class="inf2" href="https://instagram.com/af_vannzzz"><b>Instagram</b></a>
+            <br>
+            <button id="btnTutupModal" class="btn-tutup">Tutup</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,820 @@
+/* ==========================================================================
+    BACKGROUND GRID PAPER (KERTAS KOTAK-KOTAK)
+   ========================================================================== */
+
+/* Tema Terang (Light Mode) */
+body {
+    background-color: #fafafa;
+    /* Pola garis grid melintang dan membujur */
+    background-image: 
+        linear-gradient(rgba(68, 46, 112, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px; /* Ukuran kotak grid (30px x 30px) */
+}
+
+/* Tema Gelap (Dark Mode) */
+body.dark-mode {
+    background-color: #0b0f19;
+    /* Pola garis grid transparan untuk mode gelap */
+    background-image: 
+        linear-gradient(rgba(68, 46, 112, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
+
+/* ==========================================================================
+    1. VARIABLES & RESET
+   ========================================================================== */
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-card: #ffffff;
+    --text-primary: #121212;
+    --text-secondary: #555555;
+    --accent: #2563eb;
+    --accent-hover: #1d4ed8;
+    --border-color: #e5e7eb;
+    --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s ease;
+}
+
+/* Dark Mode Palette */
+body.dark-mode {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-card: #1e293b;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --border-color: #334155;
+    --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Smooth Scroll & Scroll Margin Offset */
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 80px;
+    padding: 5rem 2rem;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    transition: var(--transition);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==========================================================================
+    2. NAVBAR & HEADER
+   ========================================================================== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+body.dark-mode .header {
+    background-color: rgba(15, 23, 42, 0.9);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-item a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: var(--transition);
+}
+
+.nav-item a:hover,
+.nav-link-active {
+    color: var(--accent) !important;
+}
+
+.theme-button,
+.menu-button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--text-primary);
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.menu-button {
+    display: none;
+}
+
+/* ==========================================================================
+    3. HERO SECTION
+   ========================================================================== */
+.hero {
+    padding: 9rem 2rem 5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-subtitle {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+.hero-title span {
+    color: var(--accent);
+}
+
+.hero-role {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.hero-description {
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin-bottom: 2rem;
+}
+
+.hero-button {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.btn {
+    padding: 0.8rem 1.8rem;
+    border-radius: 6px;
+    font-weight: 600;
+    display: inline-block;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background-color: var(--accent);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+}
+
+.btn-secondary {
+    border: 1px solid var(--border-color);
+    background-color: transparent;
+    color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--bg-secondary);
+}
+
+.hero-social {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    transition: var(--transition);
+}
+
+.social-link:hover {
+    color: var(--accent);
+}
+
+.card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    z-index: 0;
+}
+
+.card-bg-1 {
+    background-color: var(--bg-secondary);
+    transform: rotate(-3deg) translate(-8px, 4px);
+    opacity: 0.9;
+}
+
+.card-bg-2 {
+    background-color: var(--bg-card);
+    transform: rotate(-6deg) translate(-16px, 8px);
+    opacity: 0.6;
+}
+
+.card-bg-3 {
+    background-color: var(--accent);
+    transform: rotate(-9deg) translate(-24px, 12px);
+    opacity: 0.25;
+}
+
+.hero-image {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 480px;
+    background-color: var(--bg-secondary);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.hero-image-container .card-bg-1 {
+    transition: all 0.3s ease;
+} 
+
+.hero-image-container .card-bg-2 {
+    transition: all 0.3s ease;
+} 
+
+.hero-image-container .card-bg-3 {
+    transition: all 0.3s ease;
+}
+
+.hero-image-container:hover .card-bg-1 {
+    border-color: var(--accent);
+    transform: rotate(-4deg) translate(-12px, 6px);
+}
+
+.hero-image-container:hover .card-bg-2 {
+    border-color: var(--accent);
+    transform: rotate(-8deg) translate(-22px, 10px);
+}
+
+.hero-image-container:hover .card-bg-3 {
+    border-color: var(--accent);
+    transform: rotate(-12deg) translate(-32px, 14px);
+}
+
+.hero-image-container {
+    position: relative;
+    max-width: 380px;
+    margin: 0 auto;
+}
+
+.hero-image {
+    width: 100%;
+    height: 480px;
+    background-color: var(--bg-secondary);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.hero-image:hover {
+    border-color: var(--accent);
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.image-label {
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.image-label span {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--accent);
+}
+
+/* ==========================================================================
+    4. SECTIONS COMMON STYLES
+   ========================================================================== */
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-number {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.section-heading h2 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+.text-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    transition: var(--transition);
+}
+
+.text-link:hover {
+    transform: translateX(5px);
+}
+
+/* ==========================================================================
+    5. INTRODUCTION SECTION
+   ========================================================================== */
+.introduction {
+    background-color: var(--bg-secondary);
+}
+
+.introduction .section-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+}
+
+.large-text {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+/* ==========================================================================
+    6. DREAM PREVIEW SECTION
+   ========================================================================== */
+.dream-preview .section-container {
+    display: grid;
+    grid-template-columns: 1.2fr repeat(3, 1fr);
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+.dream-content h2 span {
+    color: var(--accent);
+}
+
+.dream-card {
+    background-color: #d9d9d9;
+    border: 1px solid var(--border-color);
+    padding: 2rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+body.dark-mode .dream-card {
+    background: #484848;
+    padding: 2rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.dream-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
+}
+
+.dream-number {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 1rem;
+}
+
+/* ==========================================================================
+    7. PROJECT PREVIEW SECTION
+   ========================================================================== */
+.project-preview {
+    background-color: var(--bg-secondary);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.project-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.project-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
+}
+
+.project-image {
+    position: relative;
+    height: 200px;
+    background-color: #cbd5e1;
+}
+
+.project-number {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.project-info {
+    padding: 1.5rem;
+}
+
+.project-category {
+    font-size: 0.8rem;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+
+.project-info h3 {
+    margin-bottom: 0.5rem;
+}
+
+.section-button {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/* ==========================================================================
+    8. SKILLS PREVIEW SECTION
+   ========================================================================== */
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin: 3rem 0;
+}
+
+.skill-item {
+    background-color: #d9d9d9;
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .skill-item {
+    background-color: #484848;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.skill-item:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+}
+
+.skill-number {
+    color: var(--accent);
+    font-weight: 800;
+}
+
+/* ==========================================================================
+    9. CONTACT CTA SECTION
+   ========================================================================== */
+.contact-preview {
+    background-color: var(--bg-secondary);
+    text-align: center;
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-container h2 span {
+    color: var(--accent);
+}
+
+.contact-container p {
+    margin: 1rem 0 2rem;
+}
+
+/* ==========================================================================
+    10. FOOTER
+   ========================================================================== */
+.footer {
+    background-color: var(--bg-primary);
+    border-top: 1px solid var(--border-color);
+    padding: 4rem 2rem 2rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr repeat(3, 1fr);
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.footer-school {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    transition: var(--transition);
+}
+
+.footer-social a {
+    color: var(--text-secondary);
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+.footer-social a:hover {
+    color: var(--accent);
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* ==========================================================================
+    11. RESPONSIVE DESIGN (MOBILE & TABLET)
+   ========================================================================== */
+@media (max-width: 992px) {
+    .hero-container,
+    .introduction .section-container,
+    .dream-preview .section-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-button {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: var(--bg-primary);
+        flex-direction: column;
+        justify-content: center;
+        transition: var(--transition);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+}
+
+/* ==========================================================================
+    12. MODAL OVERLAY & BOX (MODERN STYLE)
+   ========================================================================== */
+.modal-overlay {
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(8px); /* Efek blur di latar belakang */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    padding: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Tampilkan Modal dengan Transisi Mulus */
+.modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Box Modal */
+.modal-box {
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    text-align: center;
+    width: 100%;
+    max-width: 420px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+/* Efek Pop-up saat Modal Muncul */
+.modal-overlay.show .modal-box {
+    transform: scale(1);
+}
+
+.modal-box h2 {
+    color: var(--accent);
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.modal-box .contact {
+    color: var(--accent);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.inf1,
+.inf2 {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    font-style: italic;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.inf1:hover,
+.inf2:hover {
+    color: #38bdf8;
+    transform: translateY(-2px);
+}
+
+.inf1 {
+    margin-bottom: 0.8rem;
+}
+
+.inf2 {
+    margin-top: 1rem;
+}
+
+.blank-text {
+    color: black;
+    margin: 3px;
+}
+
+/* Tombol Tutup */
+.btn-tutup {
+    margin-top: 1.8rem;
+    background-color: #ef4444;
+    color: #ffffff;
+    border: none;
+    padding: 0.7rem 1.8rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25);
+}
+
+.btn-tutup:hover {
+    background-color: #dc2626;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(239, 68, 68, 0.35);
+}
+
+.btn-tutup:active {
+    transform: translateY(0);
+}
