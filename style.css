@@ -2,20 +2,16 @@
     BACKGROUND GRID PAPER (KERTAS KOTAK-KOTAK)
    ========================================================================== */
 
-/* Tema Terang (Light Mode) */
 body {
     background-color: #fafafa;
-    /* Pola garis grid melintang dan membujur */
     background-image: 
         linear-gradient(rgba(68, 46, 112, 0.05) 1px, transparent 1px),
         linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
     background-size: 30px 30px; /* Ukuran kotak grid (30px x 30px) */
 }
 
-/* Tema Gelap (Dark Mode) */
 body.dark-mode {
     background-color: #0b0f19;
-    /* Pola garis grid transparan untuk mode gelap */
     background-image: 
         linear-gradient(rgba(68, 46, 112, 0.05) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
@@ -24,6 +20,7 @@ body.dark-mode {
 /* ==========================================================================
     1. VARIABLES & RESET
    ========================================================================== */
+
 :root {
     --bg-primary: #ffffff;
     --bg-secondary: #f8f9fa;
@@ -37,7 +34,6 @@ body.dark-mode {
     --transition: all 0.3s ease;
 }
 
-/* Dark Mode Palette */
 body.dark-mode {
     --bg-primary: #0f172a;
     --bg-secondary: #1e293b;
@@ -54,7 +50,6 @@ body.dark-mode {
     box-sizing: border-box;
 }
 
-/* Smooth Scroll & Scroll Margin Offset */
 html {
     scroll-behavior: smooth;
 }
