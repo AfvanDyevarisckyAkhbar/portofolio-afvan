@@ -1,23 +1,4 @@
 /* ==========================================================================
-    BACKGROUND GRID PAPER (KERTAS KOTAK-KOTAK)
-   ========================================================================== */
-
-body {
-    background-color: #fafafa;
-    background-image: 
-        linear-gradient(rgba(68, 46, 112, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
-    background-size: 30px 30px; /* Ukuran kotak grid (30px x 30px) */
-}
-
-body.dark-mode {
-    background-color: #0b0f19;
-    background-image: 
-        linear-gradient(rgba(68, 46, 112, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-}
-
-/* ==========================================================================
     1. VARIABLES & RESET
    ========================================================================== */
 
@@ -138,8 +119,7 @@ body.dark-mode .header {
     color: var(--accent) !important;
 }
 
-.theme-button,
-.menu-button {
+.theme-button {
     background: none;
     border: none;
     font-size: 1.2rem;
@@ -149,6 +129,23 @@ body.dark-mode .header {
     border-radius: 50%;
     transition: var(--transition);
 }
+
+.menu-button {
+    background: #e2e8f0;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--text-primary);
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.theme-button:hover,
+.menu-button:hover {
+    transform: scale(1.20);
+}
+
 
 .menu-button {
     display: none;
@@ -305,17 +302,17 @@ body.dark-mode .header {
 }
 
 .hero-image-container:hover .card-bg-1 {
-    border-color: var(--accent);
+    border-color: #344155;
     transform: rotate(-4deg) translate(-12px, 6px);
 }
 
 .hero-image-container:hover .card-bg-2 {
-    border-color: var(--accent);
+    border-color: #344155;
     transform: rotate(-8deg) translate(-22px, 10px);
 }
 
 .hero-image-container:hover .card-bg-3 {
-    border-color: var(--accent);
+    border-color: #344155;
     transform: rotate(-12deg) translate(-32px, 14px);
 }
 
@@ -336,7 +333,7 @@ body.dark-mode .header {
 }
 
 .hero-image:hover {
-    border-color: var(--accent);
+    border-color: #344155;
 }
 
 .hero-image img {
@@ -371,6 +368,7 @@ body.dark-mode .header {
 /* ==========================================================================
     4. SECTIONS COMMON STYLES
    ========================================================================== */
+
 .section-container {
     max-width: 1200px;
     margin: 0 auto;
