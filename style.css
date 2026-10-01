@@ -1,3 +1,4 @@
+
 /* ==========================================================================
     1. VARIABLES & RESET
    ========================================================================== */
@@ -66,6 +67,7 @@ img {
 /* ==========================================================================
     2. NAVBAR & HEADER
    ========================================================================== */
+
 .header {
     position: fixed;
     top: 0;
@@ -146,7 +148,6 @@ body.dark-mode .header {
     transform: scale(1.20);
 }
 
-
 .menu-button {
     display: none;
 }
@@ -154,6 +155,7 @@ body.dark-mode .header {
 /* ==========================================================================
     3. HERO SECTION
    ========================================================================== */
+
 .hero {
     padding: 9rem 2rem 5rem;
     max-width: 1200px;
@@ -291,11 +293,11 @@ body.dark-mode .header {
 
 .hero-image-container .card-bg-1 {
     transition: all 0.3s ease;
-} 
+}
 
 .hero-image-container .card-bg-2 {
     transition: all 0.3s ease;
-} 
+}
 
 .hero-image-container .card-bg-3 {
     transition: all 0.3s ease;
@@ -403,6 +405,7 @@ body.dark-mode .header {
 /* ==========================================================================
     5. INTRODUCTION SECTION
    ========================================================================== */
+
 .introduction {
     background-color: var(--bg-secondary);
 }
@@ -421,6 +424,7 @@ body.dark-mode .header {
 /* ==========================================================================
     6. DREAM PREVIEW SECTION
    ========================================================================== */
+
 .dream-preview .section-container {
     display: grid;
     grid-template-columns: 1.2fr repeat(3, 1fr);
@@ -464,6 +468,7 @@ body.dark-mode .dream-card {
 /* ==========================================================================
     7. PROJECT PREVIEW SECTION
    ========================================================================== */
+
 .project-preview {
     background-color: var(--bg-secondary);
 }
@@ -529,6 +534,7 @@ body.dark-mode .dream-card {
 /* ==========================================================================
     8. SKILLS PREVIEW SECTION
    ========================================================================== */
+
 .skills-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -563,6 +569,7 @@ body.dark-mode .skill-item {
 /* ==========================================================================
     9. CONTACT CTA SECTION
    ========================================================================== */
+
 .contact-preview {
     background-color: var(--bg-secondary);
     text-align: center;
@@ -584,6 +591,7 @@ body.dark-mode .skill-item {
 /* ==========================================================================
     10. FOOTER
    ========================================================================== */
+
 .footer {
     background-color: var(--bg-primary);
     border-top: 1px solid var(--border-color);
@@ -649,6 +657,7 @@ body.dark-mode .skill-item {
 /* ==========================================================================
     11. RESPONSIVE DESIGN (MOBILE & TABLET)
    ========================================================================== */
+
 @media (max-width: 992px) {
     .hero-container,
     .introduction .section-container,
@@ -700,14 +709,15 @@ body.dark-mode .skill-item {
 /* ==========================================================================
     12. MODAL OVERLAY & BOX (MODERN STYLE)
    ========================================================================== */
+
 .modal-overlay {
     position: fixed;
-    top: 0; 
-    left: 0; 
-    width: 100%; 
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.65);
-    backdrop-filter: blur(8px); /* Efek blur di latar belakang */
+    backdrop-filter: blur(8px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -810,4 +820,118 @@ body.dark-mode .skill-item {
 
 .btn-tutup:active {
     transform: translateY(0);
+}
+
+
+/* ==========================================================================
+    CONTACT FORM - LET'S CONNECT
+   ========================================================================== */
+
+/* Judul Let's Connect */
+.contact-container h2 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.contact-container:hover {
+    border-color: #38bd8f;
+}
+
+.contact-container h2 span {
+    color: var(--accent);
+}
+
+/* Pembungkus Form */
+.contact-form-wrapper {
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    text-align: left;
+}
+
+/* Jarak setiap input */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Label input */
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Input dan textarea */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: var(--transition);
+}
+
+/* Ukuran textarea */
+.form-group textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+/* Efek saat input dipilih */
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* Placeholder */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+/* Tombol kirim */
+#sendButton {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+#sendButton:hover {
+    transform: translateY(-3px);
+}
+
+/* Status pesan */
+#formStatus {
+    margin: 1rem 0 0;
+    font-size: 0.9rem;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+/* Tampilan HP */
+@media (max-width: 600px) {
+    .contact-container h2 {
+        font-size: 2.3rem;
+    }
+
+    .contact-form-wrapper {
+        padding: 1.3rem;
+    }
 }
