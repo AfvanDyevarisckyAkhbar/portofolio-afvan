@@ -254,15 +254,13 @@ scrollElements.forEach((element) => {
 // 10. EFEK LINGKARAN KURSOR
 // ======================================================
 
-// Memastikan script berjalan setelah seluruh elemen halaman siap
-document.addEventListener("DOMContentLoaded", () => {
-    let lastX = 0;
-    let lastY = 0;
-    let hue = 0;
-    let isTouching = false;
+document.addEventListener('DOMContentLoaded', () => {
+let lastX = 0;
+let lastY = 0;
+let hue = 0;
 
-    function createParticle(currentX, currentY) {
-        if (lastX === 0 && lastY === 0) {
+function createParticle(currentX, currentY) {
+    if (lastX === 0 && lastY === 0) {
         lastX = currentX;
         lastY = currentY;
     }
@@ -271,35 +269,35 @@ document.addEventListener("DOMContentLoaded", () => {
     const steps = Math.max(1, Math.floor(distance / 4));
 
     for (let i = 0; i < steps; i++) {
-      const x = lastX + (currentX - lastX) * (i / steps);
-      const y = lastY + (currentY - lastY) * (i / steps);
+        const x = lastX + (currentX - lastX) * (i / steps);
+        const y = lastY + (currentY - lastY) * (i / steps);
 
-        const trail = document.createElement("div");
+        const trail = document.createElement('div');
         document.body.appendChild(trail);
 
-      const size = Math.random() * 6 + 14;
+        const size = Math.random() * 6 + 14;
         hue = (hue + 0.5) % 360;
         const color = `hsl(${hue}, 100%, 60%)`;
 
-    Object.assign(trail.style, {
-        position: "fixed",
-        left: `${x}px`,
-        top: `${y}px`,
-        width: `${size}px`,
-        height: `${size}px`,
-        backgroundColor: color,
-        borderRadius: "50%",
-        pointerEvents: "none",
-        zIndex: "99999",
-        transform: "translate(-50%, -50%) scale(1)",
-        transition: "transform 0.6s ease-out, opacity 0.6s ease-out",
-        boxShadow: `0 0 12px ${color}, 0 0 24px ${color}`,
-        opacity: "0.9",
-    });
+        Object.assign(trail.style, {
+            position: 'fixed',
+            left: `${x}px`,
+            top: `${y}px`,
+            width: `${size}px`,
+            height: `${size}px`,
+            backgroundColor: color,
+            borderRadius: '50%',
+            pointerEvents: 'none',
+            zIndex: '99999',
+            transform: 'translate(-50%, -50%) scale(1)',
+            transition: 'transform 0.6s ease-out, opacity 0.6s ease-out',
+            boxShadow: `0 0 12px ${color}, 0 0 24px ${color}`,
+            opacity: '0.9'
+        });
 
     setTimeout(() => {
-        trail.style.transform = "translate(-50%, -50%) scale(0)";
-        trail.style.opacity = "0";
+        trail.style.transform = 'translate(-50%, -50%) scale(0)';
+        trail.style.opacity = '0';
     }, 15);
 
     setTimeout(() => {
@@ -312,38 +310,25 @@ document.addEventListener("DOMContentLoaded", () => {
 }
 
   // Event Mouse (Desktop)
-window.addEventListener("mousemove", (e) => {
+window.addEventListener('mousemove', (e) => {
     createParticle(e.clientX, e.clientY);
 });
 
-  // Event Sentuhan (HP)
-window.addEventListener(
-    "touchstart",
-    (e) => {
-        isTouching = true;
-        const touch = e.touches[0];
-        lastX = touch.clientX;
-        lastY = touch.clientY;
-        createParticle(touch.clientX, touch.clientY);
-    },
-    { passive: false },
-);
+  // Event Sentuhan (HP) - Tetap bisa scroll
+window.addEventListener('touchstart', (e) => {
+    const touch = e.touches[0];
+    lastX = touch.clientX;
+    lastY = touch.clientY;
+    createParticle(touch.clientX, touch.clientY);
+});
 
-window.addEventListener(
-    "touchmove",
-    (e) => {
-        if (!isTouching) return;
-        if (e.cancelable) e.preventDefault();
+window.addEventListener('touchmove', (e) => {
+    const touch = e.touches[0];
+    createParticle(touch.clientX, touch.clientY);
+});
 
-        const touch = e.touches[0];
-        createParticle(touch.clientX, touch.clientY);
-    },
-    { passive: false },
-);
-
-window.addEventListener("touchend", () => {
-    isTouching = false;
+window.addEventListener('touchend', () => {
     lastX = 0;
     lastY = 0;
-    });
+});
 });
