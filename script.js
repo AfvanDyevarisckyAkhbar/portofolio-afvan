@@ -13,9 +13,9 @@ if (menuButton && navMenu) {
     menuButton.setAttribute("aria-expanded", String(isOpen));
 
     menuButton.textContent = isOpen ? "×" : "≡";
-    });
+});
 
-    navLinks.forEach((link) => {
+navLinks.forEach((link) => {
     link.addEventListener("click", () => {
         navMenu.classList.remove("active");
         menuButton.setAttribute("aria-expanded", "false");
@@ -50,7 +50,7 @@ if (themeButton) {
     themeButton.textContent = isDark ? "☀️" : "🌗";
 
     themeButton.setAttribute("aria-pressed", String(isDark));
-    });
+});
 }
 
 // ======================================================
@@ -82,21 +82,21 @@ if ("IntersectionObserver" in window) {
     });
     },
     {
-        threshold: 0.12,
+    threshold: 0.12,
     },
 );
 
-    revealElements.forEach((element, index) => {
+revealElements.forEach((element, index) => {
     element.classList.add("reveal");
 
     element.style.transitionDelay = `${(index % 4) * 100}ms`;
 
     revealObserver.observe(element);
-    });
+});
 } else {
     revealElements.forEach((element) => {
     element.classList.add("visible");
-    });
+});
 }
 
 // ======================================================
@@ -146,32 +146,32 @@ if (contactForm) {
     try {
       // Mengirim pesan ke email melalui EmailJS
         await emailjs.sendForm(
-            EMAILJS_SERVICE_ID,
-            EMAILJS_TEMPLATE_ID,
-            contactForm,
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        contactForm,
         {
             publicKey: EMAILJS_PUBLIC_KEY,
         },
     );
 
       // Jika berhasil
-        formStatus.textContent = "Message sent successfully! Thank you.";
+    formStatus.textContent = "Message sent successfully! Thank you.";
 
-        formStatus.className = "success-message";
+    formStatus.className = "success-message";
 
       // Kosongkan formulir
-    contactForm.reset();
+        contactForm.reset();
     } catch (error) {
       // Jika terjadi kesalahan
-    console.error("EmailJS Error:", error);
+        console.error("EmailJS Error:", error);
 
-    formStatus.textContent = "Failed to send message. Please try again.";
+        formStatus.textContent = "Failed to send message. Please try again.";
 
-    formStatus.className = "error-message";
+        formStatus.className = "error-message";
     } finally {
       // Aktifkan kembali tombol
-    sendButton.disabled = false;
-    sendButton.textContent = "Send Message →";
+        sendButton.disabled = false;
+        sendButton.textContent = "Send Message →";
     }
 });
 }
@@ -181,7 +181,7 @@ if (contactForm) {
 // ======================================================
 
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
-link.addEventListener("click", (event) => {
+    link.addEventListener("click", (event) => {
     const targetId = link.getAttribute("href");
 
     if (!targetId || targetId === "#") {
@@ -236,15 +236,14 @@ const scrollElements = document.querySelectorAll(".scroll-animate");
 
 const observer = new IntersectionObserver(
     (entries) => {
-        entries.forEach((entry) => {
+    entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            entry.target.classList.add("show");
+        entry.target.classList.add("show");
     }
     });
-},
-{
+}, {
     threshold: 0.2,
-},
+    },
 );
 
 scrollElements.forEach((element) => {
@@ -255,63 +254,96 @@ scrollElements.forEach((element) => {
 // 10. EFEK LINGKARAN KURSOR
 // ======================================================
 
-let lastX = 0;
-let lastY = 0;
-let hue = 0; // Menentukan warna rainbow
+// Memastikan script berjalan setelah seluruh elemen halaman siap
+document.addEventListener("DOMContentLoaded", () => {
+    let lastX = 0;
+    let lastY = 0;
+    let hue = 0;
+    let isTouching = false;
 
-window.addEventListener('mousemove', (e) => {
-    const currentX = e.clientX;
-    const currentY = e.clientY;
+    function createParticle(currentX, currentY) {
+        if (lastX === 0 && lastY === 0) {
+        lastX = currentX;
+        lastY = currentY;
+    }
 
-  // Hitung jarak gerakan mouse dari posisi terakhir
     const distance = Math.hypot(currentX - lastX, currentY - lastY);
-
-  // Makin cepat mouse digeser, makin banyak partikel diisi biar ga putus-putus
     const steps = Math.max(1, Math.floor(distance / 4));
 
     for (let i = 0; i < steps; i++) {
-    // Interpolasi titik antara posisi lama dan baru
-        const x = lastX + (currentX - lastX) * (i / steps);
-        const y = lastY + (currentY - lastY) * (i / steps);
+      const x = lastX + (currentX - lastX) * (i / steps);
+      const y = lastY + (currentY - lastY) * (i / steps);
 
-        const trail = document.createElement('div');
+        const trail = document.createElement("div");
         document.body.appendChild(trail);
 
-    // Bikin ukuran partikel lebih tebal (14px - 20px)
-        const size = Math.random() * 6 + 14; 
-
-    // Ubah warna pelan-pelan (tambah 0.5 derajat hue per partikel)
+      const size = Math.random() * 6 + 14;
         hue = (hue + 0.5) % 360;
         const color = `hsl(${hue}, 100%, 60%)`;
 
     Object.assign(trail.style, {
-        position: 'fixed',
+        position: "fixed",
         left: `${x}px`,
         top: `${y}px`,
         width: `${size}px`,
         height: `${size}px`,
         backgroundColor: color,
-        borderRadius: '50%',
-        pointerEvents: 'none',
-        zIndex: '9999',
-        transform: 'translate(-50%, -50%) scale(1)',
-        transition: 'transform 0.6s ease-out, opacity 0.6s ease-out',
-        boxShadow: `0 0 12px ${color}, 0 0 24px ${color}`, // Glowing lebih tebal
-        opacity: '0.9'
+        borderRadius: "50%",
+        pointerEvents: "none",
+        zIndex: "99999",
+        transform: "translate(-50%, -50%) scale(1)",
+        transition: "transform 0.6s ease-out, opacity 0.6s ease-out",
+        boxShadow: `0 0 12px ${color}, 0 0 24px ${color}`,
+        opacity: "0.9",
     });
 
-    // Efek memudar dan menghilang
     setTimeout(() => {
-        trail.style.transform = 'translate(-50%, -50%) scale(0)';
-        trail.style.opacity = '0';
+        trail.style.transform = "translate(-50%, -50%) scale(0)";
+        trail.style.opacity = "0";
     }, 15);
 
-    // Hapus elemen biar memory aman
     setTimeout(() => {
         trail.remove();
     }, 600);
-}
+    }
 
     lastX = currentX;
     lastY = currentY;
+}
+
+  // Event Mouse (Desktop)
+window.addEventListener("mousemove", (e) => {
+    createParticle(e.clientX, e.clientY);
+});
+
+  // Event Sentuhan (HP)
+window.addEventListener(
+    "touchstart",
+    (e) => {
+        isTouching = true;
+        const touch = e.touches[0];
+        lastX = touch.clientX;
+        lastY = touch.clientY;
+        createParticle(touch.clientX, touch.clientY);
+    },
+    { passive: false },
+);
+
+window.addEventListener(
+    "touchmove",
+    (e) => {
+        if (!isTouching) return;
+        if (e.cancelable) e.preventDefault();
+
+        const touch = e.touches[0];
+        createParticle(touch.clientX, touch.clientY);
+    },
+    { passive: false },
+);
+
+window.addEventListener("touchend", () => {
+    isTouching = false;
+    lastX = 0;
+    lastY = 0;
+    });
 });
