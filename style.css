@@ -1,6 +1,6 @@
 
 /* ==========================================================================
-    1. VARIABLES & RESET
+    1. VARIABLES, RESET & LOADING SCREEN
    ========================================================================== */
 
 :root {
@@ -73,6 +73,51 @@ img {
     max-width: 100%;
     height: auto;
     display: block;
+}
+
+/* 1. Layar Loading Full Putih */
+#loading-screen {
+    position: fixed;
+    inset: 0;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+/* 2. Ukuran SVG Teks & Video */
+.video-mask-container {
+    width: 80%;
+    max-width: 800px;
+    height: 200px;
+}
+
+/* 3. Styling Font di dalam SVG */
+.svg-text {
+    font-size: 200px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+/* 4. Video Anime di dalam Huruf */
+.masked-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 5. Class untuk Hilangkan Loading */
+.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Konten Utama */
+#main-content {
+    padding: 40px;
 }
 
 /* ==========================================================================

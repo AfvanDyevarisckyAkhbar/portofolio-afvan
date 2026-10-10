@@ -35,6 +35,15 @@ document.addEventListener("click", (event) => {
 });
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    const loadingScreen = document.getElementById('loading-screen');
+
+  // Loading tidak akan hilang otomatis, tapi menunggu user klik di mana saja
+    window.addEventListener('click', () => {
+        loadingScreen.classList.add('hide');
+    });
+});
+
 // ======================================================
 // 2. DARK MODE
 // ======================================================
