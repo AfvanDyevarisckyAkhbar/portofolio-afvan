@@ -75,7 +75,6 @@ img {
     display: block;
 }
 
-/* 1. Layar Loading Full Putih */
 #loading-screen {
     position: fixed;
     inset: 0;
@@ -87,35 +86,30 @@ img {
     transition: opacity 0.8s ease, visibility 0.8s ease;
 }
 
-/* 2. Ukuran SVG Teks & Video */
 .video-mask-container {
     width: 80%;
     max-width: 800px;
     height: 200px;
 }
 
-/* 3. Styling Font di dalam SVG */
 .svg-text {
     font-size: 200px;
     font-weight: 900;
     text-transform: uppercase;
 }
 
-/* 4. Video Anime di dalam Huruf */
 .masked-video {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-/* 5. Class untuk Hilangkan Loading */
 .hide {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
 }
 
-/* Konten Utama */
 #main-content {
     padding: 40px;
 }
@@ -801,13 +795,11 @@ body.dark-mode .skill-item {
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* Tampilkan Modal dengan Transisi Mulus */
 .modal-overlay.show {
     opacity: 1;
     visibility: visible;
 }
 
-/* Box Modal */
 .modal-box {
     background-color: var(--bg-card);
     color: var(--text-primary);
@@ -822,7 +814,6 @@ body.dark-mode .skill-item {
     transition: transform 0.3s ease;
 }
 
-/* Efek Pop-up saat Modal Muncul */
 .modal-overlay.show .modal-box {
     transform: scale(1);
 }
@@ -865,42 +856,10 @@ body.dark-mode .skill-item {
     margin-top: 1rem;
 }
 
-.blank-text {
-    color: black;
-    margin: 3px;
-}
-
-/* Tombol Tutup */
-.btn-tutup {
-    margin-top: 1.8rem;
-    background-color: #ef4444;
-    color: #ffffff;
-    border: none;
-    padding: 0.7rem 1.8rem;
-    font-size: 0.95rem;
-    font-weight: 600;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: var(--transition);
-    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25);
-}
-
-.btn-tutup:hover {
-    background-color: #dc2626;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(239, 68, 68, 0.35);
-}
-
-.btn-tutup:active {
-    transform: translateY(0);
-}
-
-
 /* ==========================================================================
     13. CONTACT FORM - LET'S CONNECT
    ========================================================================== */
 
-/* Judul Let's Connect */
 .contact-container h2 {
     font-size: 2.8rem;
     line-height: 1.2;
@@ -917,7 +876,6 @@ body.dark-mode .skill-item {
     color: var(--accent);
 }
 
-/* Pembungkus Form */
 .contact-form-wrapper {
     margin-top: 2rem;
     padding: 2rem;
@@ -928,12 +886,10 @@ body.dark-mode .skill-item {
     text-align: left;
 }
 
-/* Jarak setiap input */
 .form-group {
     margin-bottom: 1.5rem;
 }
 
-/* Label input */
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
@@ -942,7 +898,6 @@ body.dark-mode .skill-item {
     color: var(--text-primary);
 }
 
-/* Input dan textarea */
 .form-group input,
 .form-group textarea {
     width: 100%;
@@ -957,27 +912,23 @@ body.dark-mode .skill-item {
     transition: var(--transition);
 }
 
-/* Ukuran textarea */
 .form-group textarea {
     min-height: 140px;
     resize: vertical;
 }
 
-/* Efek saat input dipilih */
 .form-group input:focus,
 .form-group textarea:focus {
     border-color: var(--accent);
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
 }
 
-/* Placeholder */
 .form-group input::placeholder,
 .form-group textarea::placeholder {
     color: var(--text-secondary);
     opacity: 0.7;
 }
 
-/* Tombol kirim */
 #sendButton {
     width: 100%;
     border: none;
@@ -990,7 +941,6 @@ body.dark-mode .skill-item {
     transform: translateY(-3px);
 }
 
-/* Status pesan */
 #formStatus {
     margin: 1rem 0 0;
     font-size: 0.9rem;
@@ -998,7 +948,6 @@ body.dark-mode .skill-item {
     color: var(--text-secondary);
 }
 
-/* Tampilan HP */
 @media (max-width: 600px) {
     .contact-container h2 {
         font-size: 2.3rem;

@@ -38,7 +38,6 @@ document.addEventListener("click", (event) => {
 document.addEventListener('DOMContentLoaded', () => {
     const loadingScreen = document.getElementById('loading-screen');
 
-  // Loading tidak akan hilang otomatis, tapi menunggu user klik di mana saja
     window.addEventListener('click', () => {
         loadingScreen.classList.add('hide');
     });
@@ -112,8 +111,6 @@ revealElements.forEach((element, index) => {
 // 4. EMAILJS CONFIGURATION
 // ======================================================
 
-// Ganti dengan data EmailJS milikmu.
-
 const EMAILJS_SERVICE_ID = "service_81t88za";
 const EMAILJS_TEMPLATE_ID = "template_muwznem";
 const EMAILJS_PUBLIC_KEY = "dN7LFUCp_ANrVq0wH";
@@ -130,7 +127,6 @@ if (contactForm) {
     contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    // Cek konfigurasi EmailJS
     if (
         !window.emailjs ||
         EMAILJS_SERVICE_ID.startsWith("EMAILJS_SERVICE_ID") ||
@@ -144,8 +140,7 @@ if (contactForm) {
 
         return;
     }
-
-    // Kondisi saat pesan sedang dikirim
+    
     sendButton.disabled = true;
     sendButton.textContent = "Sending...";
 
@@ -153,7 +148,6 @@ if (contactForm) {
     formStatus.className = "";
 
     try {
-      // Mengirim pesan ke email melalui EmailJS
         await emailjs.sendForm(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
@@ -163,22 +157,18 @@ if (contactForm) {
         },
     );
 
-      // Jika berhasil
     formStatus.textContent = "Message sent successfully! Thank you.";
 
     formStatus.className = "success-message";
 
-      // Kosongkan formulir
         contactForm.reset();
     } catch (error) {
-      // Jika terjadi kesalahan
         console.error("EmailJS Error:", error);
 
         formStatus.textContent = "Failed to send message. Please try again.";
 
         formStatus.className = "error-message";
     } finally {
-      // Aktifkan kembali tombol
         sendButton.disabled = false;
         sendButton.textContent = "Send Message →";
     }
